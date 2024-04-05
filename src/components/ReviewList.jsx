@@ -11,7 +11,7 @@ const ReviewList = () => {
 
   const fetchReviews = async () => {
     try {
-      const response = await fetch("../../public/data/reviewsData.json");
+      const response = await fetch("../data/reviewsData.json");
       const data = await response.json();
       setReviews(data);
     } catch (error) {
