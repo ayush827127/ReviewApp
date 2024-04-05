@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { FaStar, FaRegStarHalfStroke, FaRegStar } from "react-icons/fa6";
 import ReviewHighlighter from "./ReviewHighlighter";
+import reviewsData from "../data/reviewsData.json";
 
 const ReviewList = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetchReviews();
+    setReviews(reviewsData);
   }, []);
+  //   fetchReviews();
+  // }, []);
 
-  const fetchReviews = async () => {
-    try {
-      const response = await fetch("../data/reviewsData.json");
-      const data = await response.json();
-      setReviews(data);
-    } catch (error) {
-      console.error("Error fetching reviews:", error);
-    }
-  };
+  // const fetchReviews = async () => {
+  //   try {
+  //     const response = await fetch('../data/reviewsData.json');
+  //     console.log(response);
+  //     console.log("Data loading");
+  //     const data = await response.json();
+  //     console.log(data);
+  //     // setReviews(data);
+  //   } catch (error) {
+  //     console.error("Error fetching reviews:", error);
+  //   }
+  // };
 
   return (
     <section>
